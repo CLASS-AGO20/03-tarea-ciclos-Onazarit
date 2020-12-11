@@ -22,6 +22,19 @@ export default class App {
         }
         return(resultado);
     }
+
+    esPrimo(numero){
+        let i=1,contador=0,resultado;
+        do{
+            if(numero % i == 0)
+                contador++;
+            i++;
+        }while(i<=numero)
+        if(contador == 2)
+            return(true);
+        else
+            return(false);
+    }
 }
 
 let app = new App();
@@ -32,3 +45,8 @@ console.log("Sumatoria de 2: "+app.sumatoriaSerieUno(2));
 // Prueba metodo sumatoriaSerieDos
 console.log("Sumatoria de 6: "+app.sumatoriaSerieDos(6));
 console.log("Sumatoria de 2: "+app.sumatoriaSerieDos(2));
+
+// Prueba metodo esPrimo
+console.log("El numero 3 es primo?: "+app.esPrimo(3));
+console.log("El numero 4 es primo?: "+app.esPrimo(4));
+console.log("El numero 7 es primo?: "+app.esPrimo(7));
