@@ -45,6 +45,29 @@ export default class App {
         }while(i<=fin)
         return(string);
     }
+
+    obtenerImpares(numero1, numero2){
+        let mayor, menor,string="",opc=false;
+        if (numero1 > numero2){
+            mayor = numero1;
+            menor = numero2;
+        }
+        else{
+            mayor = numero2;
+            menor = numero1;
+        }
+        for(let i = mayor;i>=menor;i--){
+            if(i % 2 != 0){
+                if(opc == true)
+                string = string +","+ i ;
+                else{
+                    string = string + i ;
+                    opc = true;
+                }
+            }
+        }
+        return(string);
+    }
 }
 
 let app = new App();
@@ -64,3 +87,7 @@ console.log("El numero 7 es primo?: "+app.esPrimo(7));
 // Prueba metodo obtenerMultiplos
 console.log("Del 10 al 25: "+app.obtenerMultiplos(10,25));
 console.log("Del 28 al 40: "+app.obtenerMultiplos(28,40));
+
+// Prueba metodo obtenerImpares
+console.log("Ciclo 5 y 10: "+app.obtenerImpares(5,10));
+console.log("Ciclo 10 y 5: "+app.obtenerImpares(10,5));
