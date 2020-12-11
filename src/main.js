@@ -35,6 +35,16 @@ export default class App {
         else
             return(false);
     }
+
+    obtenerMultiplos(inicio, fin){
+        let i = inicio,string = "";
+        do{
+            if(i % 3 == 0)
+                string = string + i;
+            i++;
+        }while(i<=fin)
+        return(string);
+    }
 }
 
 let app = new App();
@@ -50,3 +60,7 @@ console.log("Sumatoria de 2: "+app.sumatoriaSerieDos(2));
 console.log("El numero 3 es primo?: "+app.esPrimo(3));
 console.log("El numero 4 es primo?: "+app.esPrimo(4));
 console.log("El numero 7 es primo?: "+app.esPrimo(7));
+
+// Prueba metodo obtenerMultiplos
+console.log("Del 10 al 25: "+app.obtenerMultiplos(10,25));
+console.log("Del 28 al 40: "+app.obtenerMultiplos(28,40));
